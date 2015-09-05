@@ -22,7 +22,7 @@
 			}
 
 			function login(e, p) {
-				var url = "http://127.0.0.1/app/login";
+				var url = mainFac.api_url + "app/login";
 				var data = {
 					"email": e,
 					"password": p

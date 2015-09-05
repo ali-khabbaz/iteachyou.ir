@@ -29,6 +29,18 @@ define(['app'], function (app) {
 				dependencies: [
 					'/app/jobs/jobsCtrl.js'
 				]
+			},
+			'/articleList': {
+				templateUrl: '/app/articleList/articleList.html',
+				dependencies: [
+					'/app/articleList/articleListCtrl.js'
+				]
+			},
+			'/video/:art_id/:sec_id/:vid_id': {
+				templateUrl: '/app/video/video.html',
+				dependencies: [
+					'/app/video/videoCtrl.js'
+				]
 			}
 		}
 	};

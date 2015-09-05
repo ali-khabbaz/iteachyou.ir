@@ -15,11 +15,11 @@ var express = require('./server/requires.js').express,
 	local_strategy = require('./server/requires.js').local_strategy;
 
 
-var PORT = 80;
+var PORT = 4141;
 c.connect({
 	host: '127.0.0.1',
 	user: 'root',
-	password: 'bahbah',
+	password: 'Part123',
 	db: 'test_01'
 });
 
@@ -126,6 +126,10 @@ if (cluster.isMaster) {
 	var global = require('./server/apps/global.js').global;
 	var pdfServe = require('./server/apps/pdfServe.js').pdfServe;
 	var jobs = require('./server/apps/jobs.js').jobs;
+	var article_list = require('./server/apps/articleList.js').articleList;
+	var video = require('./server/apps/video.js').video;
+	var sec_list = require('./server/apps/sec_list.js').sec_list;
+	var sections = require('./server/apps/sections.js').sections;
 
 	/*
 	destroy session
@@ -252,6 +256,10 @@ if (cluster.isMaster) {
 	});
 
 	app.post('/app/jobs', jobs);
+	app.post('/app/articleList', article_list);
+	app.post('/app/video', video);
+	app.post('/app/sec_list', sec_list);
+	app.post('/app/sections', sections);
 	app.get('/', global);
 
 
